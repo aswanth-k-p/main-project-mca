@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/r"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/r"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mock_interview_app"
+        android:usesCleartextTraffic="true">
+<!--        <activity-->
+<!--            android:name=".custom_details"-->
+<!--            android:exported="false" />-->
+        <activity
+            android:name=".view_details"
+            android:exported="false" />
+        <activity android:name=".viewhistory" />
+        <activity android:name=".testfeedback" />
+        <activity android:name=".viewresult" />
+        <activity android:name=".forgotpassword" />
+
+        <service android:name=".Serv" />
+
+        <activity android:name=".viewresult1" />
+        <activity android:name=".viewquestion" />
+        <activity android:name=".viewtest" />
+        <activity android:name=".virew_interviewer" />
+        <activity android:name=".home" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".register" />
+        <activity android:name=".ipset"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

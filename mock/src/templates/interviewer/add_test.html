@@ -1,0 +1,23 @@
+{% include 'interviewer/interheader.html' %}
+
+{% block body %}
+<form method="post" action="">
+    <table align="center">
+        <tr>
+            <td>Title</td>
+            <td><input type="text" name="textfield" required /></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="textarea" rows="5" cols="45" required  ></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="ADD"/>
+            </td>
+        </tr>
+
+    </table>
+</form>
+{% endblock %}
+{% include 'admin/adminfooter.html' %}

@@ -1,0 +1,28 @@
+{% include 'interviewer/interheader.html' %}
+
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <td>#</td>
+      <td>TITLE</td>
+      <td>DESCRIPTION</td>
+      <td colspan="4"></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['test_name'] }}</td>
+      <td>{{ i['description'] }}</td>
+      <td><a href="/edit_test/{{ i['test_id'] }}" class="btn btn-info">EDIT</a></td>
+      <td><a href="/delete_test/{{ i['test_id'] }}" class="btn btn-danger" onSubmit="return confirm('Are you sure?')">DELETE</a></td>
+          <td><a href="/question/{{ i['test_id'] }}" class="btn btn-warning">QUESTIONS</a></td>
+          <td><a href="/view_candidates/{{ i['test_id'] }}" class="btn btn-success">CANDIDATES</a></td>
+      <td><a href="/graph/{{ i['test_id'] }}" class="btn btn-info">GRAPH</a></td>
+
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}
+{% include 'admin/adminfooter.html' %}

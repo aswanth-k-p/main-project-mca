@@ -1,0 +1,31 @@
+{% include 'admin/adminheader.html' %}
+
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered" border="1">
+    <tr>
+      <td>#</td>
+      <td>NAME</td>
+      <td>EMAIL</td>
+      <td>PHONE</td>
+      <td>ABOUT</td>
+      <td colspan="2"></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['phone'] }}</td>
+      <td>{{ i['about'] }}</td>
+      <td><a href="/adm_approve_inter/{{ i['lid'] }}" class="btn btn-info">Approve</a></td>
+      <td><a href="/adm_reject_inter/{{ i['lid'] }}" class="btn btn-danger" onSubmit="return confirm('Are you sure?')">Reject</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
+{% include 'admin/adminfooter.html' %}

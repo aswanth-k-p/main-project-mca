@@ -1,0 +1,41 @@
+
+{% include 'interviewer/adminheader.html' %}
+
+{% block body %}
+<body>
+<form action="signup" method="post">
+    <table align="center">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="textfield" required  pattern="[A-Z a-z.]{3,25}"/></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="textfield2" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" name="textfield3" required pattern="[6789][0-9]{9}" /></td>
+        </tr>
+        <tr>
+            <td>About</td>
+            <td><textarea name="textarea" rows="5" cols="45" required  ></textarea></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="textfield4" required /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="REGISTER"/>
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+
+	</body>
+</html>
+{% endblock %}
+{% include 'admin/adminfooter.html' %}

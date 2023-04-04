@@ -1,0 +1,40 @@
+{% include 'interviewer/interheader.html' %}
+
+{% block body %}
+<form method="post" action="">
+    <table align="center">
+        <tr>
+            <td>Question</td>
+            <td><input type="text" name="textfield" required /></td>
+        </tr>
+        <tr>
+            <td>Answer</td>
+            <td><textarea name="textarea" rows="5" cols="45"  required ></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="ADD"/>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+    <table class="table table-bordered">
+    <tr>
+      <td>#</td>
+      <td>QUESTION</td>
+      <td>ANSWER</td>
+      <td colspan="2"></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['question'] }}</td>
+      <td>{{ i['answer'] }}</td>
+      <td><a href="/delete_qn/{{ i['qn_id'] }}/{{ tid }}" class="btn btn-danger" onSubmit="return confirm('Are you sure?')">DELETE</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+{% endblock %}
+{% include 'admin/adminfooter.html' %}
